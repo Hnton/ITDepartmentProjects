@@ -1,0 +1,180 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "";
+}
+
+@* Picture  Header *@
+<div>
+    @*<img style="width:100%" src="https://lh6.googleusercontent.com/KNfe7yrUz45-YME-QXq-lmwq3g5kAYR3fJ4NCSYe9_TezyzLXQXaz88G3W0iT2hX-j3vg3O31g=w1200" alt="Waterfall" />*@
+    <img class="banner" src="~/images/banner.jpg" alt="banner" />
+</div>
+
+@* Whole Page *@
+<div style="text-align:center">
+
+    @* Sign In/Out *@
+    <h3 style="font-weight:bold">
+        Student Sign In/Out
+    </h3>
+
+    <h5>
+        Swipe Student ID
+    </h5>
+
+    @* Form entry *@
+    <form name="form" autocomplete="off" method="get" action="">
+
+        @* Student ID Number *@
+        <div>
+            <input onkeypress="return handleEnter(this, event)" type="text" id="ID" autofocus="autofocus" placeholder="Student ID #" required />
+        </div>
+
+        @* Sign In/Out Radio *@
+        <div class="checkboxes">
+            <div class="fields sub">
+                <input type="radio" id="SignInOut" name="Sign" value="0" /> Sign In
+                <br />
+                <input type="radio" id="SignInOut" name="Sign" value="1" /> Sign Out
+            </div>
+            <br />
+
+            @* What are you here for header *@
+            <div style="text-align:center">
+                <h3>What are you using the Center for? Please select all that apply.</h3>
+            </div>
+
+            @* Checkbox values *@
+            <div class="sub" id="CenterUse">
+                <input name="CenterUseChoice" type="checkbox" value="Tutoring" /> Tutoring<br />
+                <input name="CenterUseChoice" type="checkbox" value="Printing" /> Printing<br />
+                <input name="CenterUseChoice" type="checkbox" value="Computer Use" /> Computer Use<br />
+                <input name="CenterUseChoice" type="checkbox" value="Study Space" /> Study Space<br />
+                <input name="CenterUseChoice" type="checkbox" value="Math Make-Up" /> Math Make-Up<br />
+                <input name="CenterUseChoice" type="checkbox" value="Textbook Use" /> Textbook Use<br />
+                <input name="CenterUseChoice" type="checkbox" value="Box of Bones" /> Box of Bones<br />
+                <input name="CenterUseChoice" type="checkbox" value="Kurzweil" /> Kurzweil<br />
+                <input name="CenterUseChoice" type="checkbox" value="Calculator Use" /> Calculator Use<br />
+                <input name="CenterUseChoice" type="checkbox" value="Microscope" /> Microscope<br />
+                <input name="CenterUseChoice" type="checkbox" value="Brainfuse" /> Brainfuse<br />
+                <input name="CenterUseChoice" type="checkbox" value="Other" /> Other<br />
+       
+                <br />
+            </div>
+
+            @* What subject header *@
+            <div style="text-align:center">
+                <h3>What subject are you using the Center for?</h3>
+            </div>
+
+            @* Subject checkboxes *@
+            <div class="sub" id="Subject">
+                <input name="SubjectChoice" type="checkbox" value="Math" /> Math<br />
+                <input name="SubjectChoice" type="checkbox" value="Science" /> Science<br />
+                <input name="SubjectChoice" type="checkbox" value="English" /> English<br />
+                <input name="SubjectChoice" type="checkbox" value="Nursing" /> Nursing<br />
+                <input name="SubjectChoice" type="checkbox" value="Computer Science" /> Computer Science<br />
+                <input name="SubjectChoice" type="checkbox" value="College 101" /> College 101<br />
+                <input name="SubjectChoice" type="checkbox" value="History" /> History<br />
+                <input name="SubjectChoice" type="checkbox" value="Accounting" /> Accounting<br />
+                <input name="SubjectChoice" type="checkbox" value="Sociology" /> Sociology<br />
+                <input name="SubjectChoice" type="checkbox" value="Business" /> Business<br />
+                <input name="SubjectChoice" type="checkbox" value="Criminal Justice" /> Criminal Justice<br />
+                <input name="SubjectChoice" type="checkbox" value="Education (Major)" /> Education (Major)<br />
+                <input name="SubjectChoice" type="checkbox" value="Legal Studies" /> Legal Studies<br />
+                <input name="CenterUseChoice" type="checkbox" value="Other" /> Other<br />
+                <br />
+            </div>
+
+            @* Math make-up header *@
+            <div id="Math Make-up">
+
+
+                <div style="text-align:center">
+                    <h3>If you are here for math make-up, what is your professors name?</h3>
+                </div>
+
+                <input type="text" id="MathMakeUp" size="25">
+                <br />
+            </div>
+
+            <br />
+            @* Submit button *@
+            <button onclick="getValues()" type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+
+        // Getting the student information
+        function getValues() {
+
+            // Gets Student ID
+            var id = document.getElementById("ID").value;
+            alert(id);
+            window.localStorage.setItem('Student ID', id);
+
+            // Signing in == 0 Signing Out == 1
+            var signInOut = document.getElementsByName('Sign');
+            var checkedSignInOut = [];
+
+            for (var j = 0; j < signInOut.length; j++) {
+                if (signInOut[j].checked) {
+                    checkedSignInOut.push(signInOut[j].value);
+                }
+            }
+            alert(checkedSignInOut);
+            window.localStorage.setItem('Sign(0 - in /1 - out)', checkedSignInOut);
+
+
+            // What the person is at the Tutoring center for
+            var use = document.getElementsByName('CenterUseChoice');
+            var checkedUse = [];
+
+            for (var i = 0; i < use.length; i++) {
+                if (use[i].checked) {
+                    checkedUse.push(use[i].value);
+                }
+            }
+            alert(checkedUse);
+            window.localStorage.setItem('Subject', checkedUse);
+
+            // What subject the person is using the Tutoring Center for
+            var subject = document.getElementsByName('SubjectChoice');
+            var checkedSubject = [];
+
+            for (var k = 0; k < subject.length; k++) {
+                if (subject[k].checked) {
+                    checkedSubject.push(subject[k].value);
+                }
+            }
+            alert(checkedSubject);
+            window.localStorage.setItem('Subject', checkedSubject);
+
+            // Math teachers name if applicable
+            var mathTeach = document.getElementById("MathMakeUp").value;
+            alert(mathTeach);
+            window.localStorage.setItem('Math Teacher Name', mathTeach);
+
+        }
+
+
+        // Not allowing the "Enter" button to be used when swiping
+        function handleEnter(field, event) {
+            var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+            if (keyCode == 13) {
+                var i;
+                for (i = 0; i < field.form.elements.length; i++)
+                    if (field == field.form.elements[i])
+                        break;
+                i = (i + 1) % field.form.elements.length;
+                field.form.elements[i].focus();
+                return false;
+            }
+            else
+                return true;
+        }
+    </script>
+
+</div>
+
