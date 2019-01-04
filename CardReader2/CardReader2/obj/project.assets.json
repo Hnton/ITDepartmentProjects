@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDep\\CardReader2\\CardReader2\\CardReader2.csproj",
+      "projectUniqueName": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\CardReader2.csproj",
       "projectName": "CardReader2",
-      "projectPath": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDep\\CardReader2\\CardReader2\\CardReader2.csproj",
+      "projectPath": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\CardReader2.csproj",
       "packagesPath": "C:\\Users\\mhinton4\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDep\\CardReader2\\CardReader2\\obj\\",
+      "outputPath": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
