@@ -25,14 +25,9 @@ namespace TutoringCenter.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "StudentID")] Login login)
         {
-            if (ModelState.IsValid)
-            {
-                db.Logins.Add(login);
-                db.SaveChanges();
-                return RedirectToAction("Create");
-            }
+            TempData["TempStudentId"] = login.StudentID;
 
-            return View(login);
+            return RedirectToAction("Create");
         }
 
         // GET: Login/Details/5
@@ -53,6 +48,8 @@ namespace TutoringCenter.Controllers
         // GET: Login/Create
         public ActionResult Create()
         {
+
+            ViewBag.data = TempData["TempStudentId"].ToString();
             return View();
         }
 
@@ -61,10 +58,11 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VisitReason,Subject")] Login login)
+        public ActionResult Create([Bind(Include = "Id,StudentId,VisitReason,Subject")] Login login)
         {
             if (ModelState.IsValid)
             {
+      
                 db.Logins.Add(login);
                 db.SaveChanges();
                 return RedirectToAction("Index");
