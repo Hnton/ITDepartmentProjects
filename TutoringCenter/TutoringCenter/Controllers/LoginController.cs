@@ -21,6 +21,20 @@ namespace TutoringCenter.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index([Bind(Include = "StudentID")] Login login)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Logins.Add(login);
+                db.SaveChanges();
+                return RedirectToAction("Create");
+            }
+
+            return View(login);
+        }
+
         // GET: Login/Details/5
         public ActionResult Details(int? id)
         {
@@ -47,7 +61,7 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StudentID,VisitReason,Subject")] Login login)
+        public ActionResult Create([Bind(Include = "Id,VisitReason,Subject")] Login login)
         {
             if (ModelState.IsValid)
             {

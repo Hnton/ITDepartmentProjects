@@ -4,36 +4,117 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<body style="background-image:url(https://rrcsignin.wvup.edu/images/66346.jpg);background-size: cover;">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+       
+
+        <div class="container body-content">
+
+
+            <style>
+
+                .Submit_Button {
+                    background: rgb(28, 184, 65);
+                    color: white;
+                    border-radius: 20px;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    padding-bottom: 15px;
+                    padding-top: 15px;
+                    font-size: 14pt;
+                }
+
+                    .Submit_Button:hover {
+                        background-color: #808080;
+                        color: white;
+                    }
+            </style>
+            <link href="/Content/multi-select.css" rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        
+            <script>
+                $(document).ready(function () {
+                    $('#STUDENTID').focus()
+                })
+            </script>
+            <br>
+            <div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;
+padding-left:20px;padding-right:20px;padding-bottom:20px;padding-top:0;
+border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
+
+                
+                         <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td width="75%">
+                                        <span style="font-size:32pt;">Welcome to the </span><br><span style="font-size:18pt;">Riverhawk Resource &amp; Tutoring Center</span>
+                                    </td>
+                                    <td width="25%">
+                                        <img src="https://rrcsignin.wvup.edu/IMAGES/Rick.JPG" style="width:150px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <h3>Please Swipe your ID or Enter your WVUP ID below:</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"></td>
+                                    <td>
+                                        <br>
+                                        <div class="editor-field">
+                                            <center>
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                <div class="form-group" style="margin-left:15%">
+                                                    
+                                                    <div class="col-md-10">
+                                                        @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control" } })
+                                                      
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br><br>
+                        <center><input type="submit" value="Sign In" class="Submit_Button"></center>
+
+                    </div>
+             
+
+
+            </div>
+            <br><br>
+
+            <hr>
+            <footer>
+                <center>
+
+                    300 Campus Drive, Parkersburg, WV 26104-8647 | Voice: 304-424.8000 | Fax: 304-424.8315 | Toll-Free: 1-800-WVA-WVUP (WV/OH)<br>
+                    Accredited by The Higher Learning Commission and a member of the North Central Association of Colleges and Schools.<br>
+                    A member institution of the Community and Technical College System of West Virginia<br>
+                    WVU Parkersburg is an affiliated institution of West Virginia University | An Equal Opportunity/Affirmative Action institution
+                </center>
+            </footer>
    
-<div class="form-horizontal">
-    <h4>Login</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            @Html.ActionLink("Login", "Create", "Login", null, new { @class = "btn btn-primary btn-large" })
 
 
-        </div>
-    </div>
-</div>
 
+    }
 
-}
-
+</body>
 
 
 @section Scripts {
