@@ -48,9 +48,8 @@ namespace TutoringCenter.Controllers
         // GET: Login/Create
         public ActionResult Create()
         {
-
             ViewBag.data = TempData["TempStudentId"].ToString();
-            return View();
+            return View(new Models.Login());//Brian Added here
         }
 
         // POST: Login/Create
@@ -138,7 +137,7 @@ namespace TutoringCenter.Controllers
         }
     }
 
-
+    
 
 
     
