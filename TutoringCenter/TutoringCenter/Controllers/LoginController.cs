@@ -57,7 +57,7 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StudentId,VisitReason,Subject")] Login login)
+        public ActionResult Create([Bind(Include = "Id,StudentId,VisitReason,Subject,CheckedIn")] Login login)
         {
             if (ModelState.IsValid)
             {

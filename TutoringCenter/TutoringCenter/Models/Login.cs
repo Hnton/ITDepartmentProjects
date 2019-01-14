@@ -12,6 +12,8 @@ namespace TutoringCenter.Models
         public int StudentID { get; set; }
         public String VisitReason { get; set; }
         public String Subject { get; set; }
+        public DateTime CheckedIn { get; set; }
+        public DateTime? CheckedOut { get; set; }
 
 
         //Added by Brian        
