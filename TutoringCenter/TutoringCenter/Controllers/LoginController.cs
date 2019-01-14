@@ -31,7 +31,7 @@ namespace TutoringCenter.Controllers
 
             if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Logout");
             }
             else
             { 
@@ -143,6 +143,11 @@ namespace TutoringCenter.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Logout()
+        {
+            return View();
         }
     }
 
