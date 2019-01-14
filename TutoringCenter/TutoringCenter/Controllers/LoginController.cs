@@ -27,7 +27,16 @@ namespace TutoringCenter.Controllers
         {
             TempData["TempStudentId"] = login.StudentID;
 
-            return RedirectToAction("Create");
+           
+
+            if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            { 
+                return RedirectToAction("Create");
+            }
         }
 
         // GET: Login/Details/5
