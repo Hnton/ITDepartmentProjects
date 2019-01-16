@@ -4,66 +4,164 @@
     ViewBag.Title = "Logout";
 }
 
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Login</h4>
-        <hr />
-        <div style="display:none">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.VisitReason, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.VisitReason, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.VisitReason, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
-                </div>
-            </div>
+    <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> - My ASP.NET Application</title>
+        <link href="/Content/css?v=XrM_i-qL7ntkoyZchCNCLeeyZEN21k6m7X1mfUibzPs1" rel="stylesheet">
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.CheckedIn, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CheckedIn, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CheckedIn, "", new { @class = "text-danger" })
-                </div>
-            </div>
+        <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.CheckedOut, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CheckedOut, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now } })
-                    @Html.ValidationMessageFor(model => model.CheckedOut, "", new { @class = "text-danger" })
-                </div>
-            </div>
+
+    </head>
+    <body style="background-image:url(https://rrcsignin.wvup.edu/images/66346.jpg);background-size: cover;">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+
         </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+
+        <div class="form-horizontal">
+            
+            <hr />
+            <div style="display:none">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.VisitReason, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.VisitReason, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.VisitReason, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CheckedIn, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CheckedIn, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CheckedIn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CheckedOut, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CheckedOut, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now } })
+                        @Html.ValidationMessageFor(model => model.CheckedOut, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="container body-content">
+
+                <style>
+
+                    .Submit_Button {
+                        background: rgb(202, 60, 60);
+                        color: white;
+                        border-radius: 20px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        padding-bottom: 15px;
+                        padding-top: 15px;
+                        font-size: 34pt;
+                        width: 400px;
+                    }
+
+                        .Submit_Button:hover {
+                            background-color: #808080;
+                            color: white;
+                        }
+                </style>
+                <br>
+                <div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;padding:20px;border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
+                 
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td width="75%">
+                                            <span style="font-size:32pt;">Welcome to the </span><br><span style="font-size:18pt;">Riverhawk Resource &amp; Tutoring Center</span>
+                                        </td>
+                                        <td width="25%">
+                                            <img src="https://rrcsignin.wvup.edu/IMAGES/Rick.JPG" style="width:150px">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                            <div style="display:none">
+                                <hr>
+
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="STUDENTID">STUDENTID</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control text-box single-line" id="STUDENTID" name="STUDENTID" type="text" value="991743103">
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="STUDENTID" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                Survey Says: 	 or
+                            </div>
+
+
+                            <center><div class="form-group">
+       <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Logout" class="Submit_Button" />
     </div>
+</div></center>
+
+
+                        </div>
+                   
+
+                </div>
+                <br><br>
+
+                <hr>
+                <footer>
+                    <center>
+
+                        300 Campus Drive, Parkersburg, WV 26104-8647 | Voice: 304-424.8000 | Fax: 304-424.8315 | Toll-Free: 1-800-WVA-WVUP (WV/OH)<br>
+                        Accredited by The Higher Learning Commission and a member of the North Central Association of Colleges and Schools.<br>
+                        A member institution of the Community and Technical College System of West Virginia<br>
+                        WVU Parkersburg is an affiliated institution of West Virginia University | An Equal Opportunity/Affirmative Action institution
+                    </center>
+                </footer>
+            </div>
+
+
+
+
+
+    </body>
+</html>
+
+
+
+
+
 }
 
 <div>

@@ -86,7 +86,7 @@ namespace TutoringCenter.Controllers
       
                 db.Logins.Add(login);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("CheckedIn");
             }
 
             return View(login);
@@ -146,7 +146,7 @@ namespace TutoringCenter.Controllers
             {
                 db.Entry(login).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("CheckedOut");
             }
             return View(login);
         }
