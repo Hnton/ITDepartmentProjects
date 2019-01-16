@@ -23,7 +23,7 @@ namespace TutoringCenter.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "StudentID")] Login login)
+        public ActionResult Index([Bind(Include = "Id,StudentID")] Login login)
         {
             TempData["TempStudentId"] = login.StudentID;
 
@@ -31,8 +31,10 @@ namespace TutoringCenter.Controllers
 
             if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
-             
-                return RedirectToAction("Logout");
+
+                
+
+                return RedirectToAction("Logout", new { id = 47 });
             }
             else
             { 
@@ -95,6 +97,21 @@ namespace TutoringCenter.Controllers
             return View(login);
         }
 
+        public ActionResult Logout(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Login login = db.Logins.Find(id);
+            if (login == null)
+            {
+                return HttpNotFound();
+            }
+            return View(login);
+        }
+
         // POST: Login/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -110,6 +127,22 @@ namespace TutoringCenter.Controllers
             }
             return View(login);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logout([Bind(Include = "Id,StudentID,VisitReason,Subject,CheckedIn,CheckedOut")] Login login)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(login).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(login);
+        }
+
+
+
 
         // GET: Login/Delete/5
         public ActionResult Delete(int? id)
@@ -146,11 +179,7 @@ namespace TutoringCenter.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Logout()
-        {
-            
-            return View();
-        }
+        
     }
 
     
