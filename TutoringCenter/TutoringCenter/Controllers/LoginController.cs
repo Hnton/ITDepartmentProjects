@@ -31,6 +31,7 @@ namespace TutoringCenter.Controllers
 
             if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
+             
                 return RedirectToAction("Logout");
             }
             else
@@ -99,7 +100,7 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,StudentID,VisitReason,Subject")] Login login)
+        public ActionResult Edit([Bind(Include = "Id,StudentID,VisitReason,Subject,CheckedIn,CheckedOut")] Login login)
         {
             if (ModelState.IsValid)
             {
@@ -147,6 +148,7 @@ namespace TutoringCenter.Controllers
 
         public ActionResult Logout()
         {
+            
             return View();
         }
     }
