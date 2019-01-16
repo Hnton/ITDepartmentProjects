@@ -31,10 +31,10 @@ namespace TutoringCenter.Controllers
 
             if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
+                var student = db.Logins.Where(u => u.StudentID == login.StudentID).Select(u => new { IDnum = u.Id }).Single();
 
-                
-
-                return RedirectToAction("Logout", new { id = 47 });
+                var i = student.IDnum;
+                return RedirectToAction("Logout", new { id = i });
             }
             else
             { 
