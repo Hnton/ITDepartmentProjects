@@ -232,6 +232,8 @@
     <Content Include="Views\Login\Edit.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Logout.cshtml" />
+    <Content Include="Views\Login\CheckedIn.cshtml" />
+    <Content Include="Views\Login\CheckedOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

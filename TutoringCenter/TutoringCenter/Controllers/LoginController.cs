@@ -21,6 +21,16 @@ namespace TutoringCenter.Controllers
             return View();
         }
 
+        public ActionResult CheckedIn()
+        {
+            return View();
+        }
+
+        public ActionResult CheckedOut()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "Id,StudentID")] Login login)
@@ -31,7 +41,7 @@ namespace TutoringCenter.Controllers
 
             if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
-                var student = db.Logins.Where(u => u.StudentID == login.StudentID).Select(u => new { IDnum = u.Id }).Single();
+                var student = db.Logins.Where(u => u.StudentID == login.StudentID && u.CheckedOut == null).Select(u => new { IDnum = u.Id }).Single();
 
                 var i = student.IDnum;
                 return RedirectToAction("Logout", new { id = i });
