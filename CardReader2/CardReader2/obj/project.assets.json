@@ -11794,23 +11794,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mhinton4\\.nuget\\packages\\": {},
+    "C:\\Users\\bbelcher\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\CardReader2.csproj",
+      "projectUniqueName": "C:\\Users\\bbelcher\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\CardReader2.csproj",
       "projectName": "CardReader2",
-      "projectPath": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\CardReader2.csproj",
-      "packagesPath": "C:\\Users\\mhinton4\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhinton4\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\obj\\",
+      "projectPath": "C:\\Users\\bbelcher\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\CardReader2.csproj",
+      "packagesPath": "C:\\Users\\bbelcher\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bbelcher\\Documents\\GitHub\\ITDepartmentProjects\\CardReader2\\CardReader2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mhinton4\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bbelcher\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
