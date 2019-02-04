@@ -15,35 +15,7 @@ namespace TutoringCenter.Models
         public DateTime CheckedIn { get; set; }
         public DateTime? CheckedOut { get; set; }
         
-        //Attempted add for Checkboxes
-        public bool Tutoring { get; set; }
-        public bool Printing { get; set; }
-        public bool ComputerUse { get; set; }
-        public bool StudySpace { get; set; }
-        public bool MathMakeup { get; set; }
-        public bool Textbook { get; set; }
-        public bool Kurzweil { get; set; }
-        public bool Calculator { get; set; }
-        public bool Microscope { get; set; }
-        public bool Brainfuse { get; set; }
-        public bool OTHER1 { get; set; }
-
-        public bool Math { get; set; }
-        public bool English { get; set; }
-        public bool Nursing { get; set; }
-        public bool ComputerScience { get; set; }
-        public bool College101 { get; set; }
-        public bool Psychology { get; set; }
-        public bool History { get; set; }
-        public bool Accounting { get; set; }
-        public bool Sociology { get; set; }
-        public bool Business { get; set; }
-        public bool CriminalJustice { get; set; }
-        public bool EnglishMajor { get; set; }
-        public bool LegalStudies { get; set; }
-        public bool OTHER2 { get; set; }
-        //End of attempted add for Checkboxes
-
+       
         //Added by Brian        
         public IEnumerable<SelectListItem> VisitReasonList
         {
