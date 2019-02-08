@@ -154,6 +154,14 @@
     <Compile Include="Migrations\201902081956594_Update2820192.Designer.cs">
       <DependentUpon>201902081956594_Update2820192.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902082009559_2.cs" />
+    <Compile Include="Migrations\201902082009559_2.Designer.cs">
+      <DependentUpon>201902082009559_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902082014254_3.cs" />
+    <Compile Include="Migrations\201902082014254_3.Designer.cs">
+      <DependentUpon>201902082014254_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Reason.cs" />
@@ -286,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902081956594_Update2820192.resx">
       <DependentUpon>201902081956594_Update2820192.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902082009559_2.resx">
+      <DependentUpon>201902082009559_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902082014254_3.resx">
+      <DependentUpon>201902082014254_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

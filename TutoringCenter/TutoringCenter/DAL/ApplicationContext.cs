@@ -18,6 +18,7 @@ namespace TutoringCenter.DAL
         public DbSet<Login> Logins { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Reason> Reasons { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -25,6 +26,6 @@ namespace TutoringCenter.DAL
             base.OnModelCreating(modelBuilder);
         }
 
-        public System.Data.Entity.DbSet<TutoringCenter.Models.Subject> Subjects { get; set; }
+      
     }
 }

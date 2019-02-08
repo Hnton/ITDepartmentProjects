@@ -72,6 +72,7 @@ namespace TutoringCenter.Controllers
         {
             ViewBag.data = TempData["TempStudentId"].ToString();
             ViewBag.Reasons = new MultiSelectList(db.Reasons.ToList(), "R_ID", "Name");
+            ViewBag.Subjects = new MultiSelectList(db.Subjects.ToList(), "S_ID", "Name");
             return View(new Models.Login());//Brian Added here
         }
 
@@ -83,7 +84,6 @@ namespace TutoringCenter.Controllers
         public ActionResult Create(Login login)
         {
             
-            login.CheckedIn = DateTime.Now;
             if (ModelState.IsValid)
             {
                 
@@ -93,6 +93,12 @@ namespace TutoringCenter.Controllers
                 {
                     Reason reason = db.Reasons.Find(ID);
                     login.Reasons.Add(reason);
+                }
+                foreach (int ID in login.SubjectIDs)
+                {
+                    Subject subject = db.Subjects.Find(ID);
+                    login.Subjects.Add(subject);
+                   
                 }
                 db.Entry(login).State = EntityState.Modified;
                 db.SaveChanges();
