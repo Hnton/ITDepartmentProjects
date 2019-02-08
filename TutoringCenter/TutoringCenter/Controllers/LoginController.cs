@@ -33,15 +33,15 @@ namespace TutoringCenter.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Id,StudentID")] Login login)
+        public ActionResult Index(Login login)
         {
-            TempData["TempStudentId"] = login.StudentID;
+            TempData["TempStudentId"] = login.Student.StudentID;
 
            
 
-            if(db.Logins.Where(u => u.StudentID == login.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
+            if(db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
-                var student = db.Logins.Where(u => u.StudentID == login.StudentID && u.CheckedOut == null).Select(u => new { IDnum = u.Id }).Single();
+                var student = db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID && u.CheckedOut == null).Select(u => new { IDnum = u.Student.ID }).Single();
 
                 var i = student.IDnum;
                 return RedirectToAction("Logout", new { id = i });
@@ -71,6 +71,7 @@ namespace TutoringCenter.Controllers
         public ActionResult Create()
         {
             ViewBag.data = TempData["TempStudentId"].ToString();
+            ViewBag.Reasons = new MultiSelectList(db.Reasons.ToList(), "R_ID", "Name");
             return View(new Models.Login());//Brian Added here
         }
 
@@ -79,12 +80,21 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StudentId,VisitReason,Subject,CheckedIn")] Login login)
+        public ActionResult Create(Login login)
         {
+            
+            login.CheckedIn = DateTime.Now;
             if (ModelState.IsValid)
             {
                 
                 db.Logins.Add(login);
+                db.SaveChanges();
+                foreach(int ID in login.ReasonIDs)
+                {
+                    Reason reason = db.Reasons.Find(ID);
+                    login.Reasons.Add(reason);
+                }
+                db.Entry(login).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("CheckedIn");
             }

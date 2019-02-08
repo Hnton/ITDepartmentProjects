@@ -128,8 +128,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ReasonsController.cs" />
     <Compile Include="DAL\ApplicationContext.cs" />
-    <Compile Include="DAL\Initializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,8 +145,14 @@
     <Compile Include="Migrations\201901141939493_tbupdate1.Designer.cs">
       <DependentUpon>201901141939493_tbupdate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902081833360_Update282019.cs" />
+    <Compile Include="Migrations\201902081833360_Update282019.Designer.cs">
+      <DependentUpon>201902081833360_Update282019.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Reason.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +240,11 @@
     <Content Include="Views\Login\Logout.cshtml" />
     <Content Include="Views\Login\CheckedIn.cshtml" />
     <Content Include="Views\Login\CheckedOut.cshtml" />
+    <Content Include="Views\Reasons\Create.cshtml" />
+    <Content Include="Views\Reasons\Delete.cshtml" />
+    <Content Include="Views\Reasons\Details.cshtml" />
+    <Content Include="Views\Reasons\Edit.cshtml" />
+    <Content Include="Views\Reasons\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -258,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901141939493_tbupdate1.resx">
       <DependentUpon>201901141939493_tbupdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902081833360_Update282019.resx">
+      <DependentUpon>201902081833360_Update282019.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

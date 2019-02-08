@@ -8,13 +8,18 @@ namespace TutoringCenter.Models
 {
     public class Login
     {
-        public int Id { get; set; }
-        public int StudentID { get; set; }
-        public String VisitReason { get; set; }
-        public String Subject { get; set; }
+        public Login() {
+            this.Reasons = new List<Reason>();
+            this.ReasonIDs = new List<int>();
+        }
+        public int ID { get; set; }
         public DateTime CheckedIn { get; set; }
         public DateTime? CheckedOut { get; set; }
+        public virtual ICollection<Reason> Reasons { get; set; }
+        //public virtual ICollection<Subject> Subjects { get; set; }
+        public Student Student { get; set; }
         
+        public List<int> ReasonIDs { get; set; }
        
         //Added by Brian        
         public IEnumerable<SelectListItem> VisitReasonList

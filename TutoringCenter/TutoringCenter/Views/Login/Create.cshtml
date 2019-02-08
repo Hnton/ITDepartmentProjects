@@ -4,6 +4,17 @@
 	ViewBag.Title = "Check In";
 }
 
+
+<script>
+
+
+    $(document).ready(function () {
+
+        $("#ReasonIDs").multiSelect();
+
+    })
+</script>
+
 @*<h2>Create</h2>*@
 <body style="background-image:url(https://rrcsignin.wvup.edu/images/66346.jpg);background-size: cover;">
 
@@ -65,59 +76,26 @@
 
 
                 <div class="form-group" style="display:none">
-                    //this is hidden
-                    @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    
+                    @Html.LabelFor(model => model.Student.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
-                        @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Student.StudentID, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
+                        @Html.ValidationMessageFor(model => model.Student.StudentID, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <h3>Reason for Visit?</h3>
-                    @*  @Html.LabelFor(model => model.VisitReason, htmlAttributes: new { @class = "control-label col-md-2", size = 8 })*@
+                   
+                    @Html.LabelFor(model => model.ReasonIDs, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @*
-            @Html.EditorFor(model => model.VisitReason, new { htmlAttributes = new { @class = "form-control" } })
-                        *@
-
-                        @*Added by Brian*@
-
-                        @Html.ListBoxFor(model => model.VisitReason, Model.VisitReasonList)
-
-                        @*
-            @Html.DropDownListFor(model => model.VisitReason, new SelectList(new string[] { "Tutoring", "Printing", "Computer Use", "Study Space", "Math Make-up", "Textbook Use", "Box of Bones", "Kurzweil", "Calculator", "Microscope", "Brainfuse", "Other" }), htmlAttributes: new { @class = "form-control" })
-                        *@
-
-                        @Html.ValidationMessageFor(model => model.VisitReason, "", new { @class = "text-danger" })
+                        @Html.ListBoxFor(model => model.ReasonIDs, ViewBag.Reasons as MultiSelectList, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
+                        @Html.ValidationMessageFor(model => model.Student.StudentID, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <h3>I need help with the following subject(s):</h3>
-                    @*@Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })*@
-                    <div class="col-md-10">
-                        @*
-            @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
-                        *@
 
-                        @Html.ListBoxFor(model => model.Subject, Model.SubjectList)
 
-                        @*
-            @Html.DropDownListFor(model => model.Subject, new SelectList(new string[] { "Math", "English", "Nursing", "Computer Science", "College 101", "Psychology", "History", "Accounting", "Sociology", "Business", "Criminal Justice", "English (Major)", "Legal Studies", "OTHER" }), htmlAttributes: new { @class = "form-control" })
-                        *@
-                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
-                    </div>
-                </div>
 
-                <div class="form-group" style="display:none">
-
-                    @Html.LabelFor(model => model.CheckedIn, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.CheckedIn, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now } })
-                        @Html.ValidationMessageFor(model => model.CheckedIn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
