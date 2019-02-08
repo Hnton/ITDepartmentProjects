@@ -363,3 +363,5 @@ C:\Users\Mikae\OneDrive\Desktop\CS - 260 Capstone\ITDepartmentProjects\TutoringC
 C:\Users\Mikae\OneDrive\Desktop\CS - 260 Capstone\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.dll
 C:\Users\Mikae\OneDrive\Desktop\CS - 260 Capstone\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.pdb
 C:\Users\Mikae\OneDrive\Desktop\CS - 260 Capstone\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.Update282019.resources
+C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.Update282019.resources
+C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.Update2820192.resources

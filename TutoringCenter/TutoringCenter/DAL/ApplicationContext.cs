@@ -24,5 +24,7 @@ namespace TutoringCenter.DAL
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<TutoringCenter.Models.Subject> Subjects { get; set; }
     }
 }
