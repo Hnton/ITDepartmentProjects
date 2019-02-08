@@ -4,20 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-
 <body style="background-image:url(https://rrcsignin.wvup.edu/images/66346.jpg);background-size: cover;">
 
     @using (Html.BeginForm())
     {
-        @Html.AntiForgeryToken()
-
-       
+        @Html.AntiForgeryToken()       
 
         <div class="container body-content">
-
-
             <style>
-
                 .Submit_Button {
                     background: rgb(28, 184, 65);
                     color: white;
@@ -40,6 +34,7 @@
                     margin: 0;
                 }
             </style>
+
             <link href="/Content/multi-select.css" rel="stylesheet">
             <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         
@@ -48,6 +43,7 @@
                     $('#STUDENTID').focus()
                 })
             </script>
+
             <br>
             <div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;
                padding-left:20px;padding-right:20px;padding-bottom:20px;padding-top:0;
