@@ -38,12 +38,22 @@ namespace TutoringCenter.Controllers
             TempData["TempStudentId"] = login.Student.StudentID;
 
 
-            if(db.Students.Where(u => u.StudentID == login.Student.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
+            
+            if(db.Students.Where(u => u.StudentID == login.Student.StudentID).Any())
             {
-                var student = db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID).Select(u => new { IDnum = u.Student.ID }).Single();
 
-                var i = student.IDnum;
-                return RedirectToAction("Logout", new { id = i });
+                if(db.Logins.Where(x => x.Student.ID == login.Student.StudentID && x.CheckedOut == null).Any())
+              
+                {
+                    var student = db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID).Select(u => new { IDnum = u.ID }).Single();
+
+                    var i = student.IDnum;
+                    return RedirectToAction("Logout", new { id = i });
+                }
+                else
+                {
+                    return RedirectToAction("Create");
+                }
             }
             else
             { 
@@ -133,6 +143,11 @@ namespace TutoringCenter.Controllers
             
             Login login = db.Logins.Find(Id);
             
+            db.Logins
+                .Where(y => y.Student.ID == login.ID)
+                .ToList()
+                .ForEach(a => a.CheckedOut = DateTime.Now);
+            db.SaveChanges();
             if (login == null)
             {
                 return HttpNotFound();
