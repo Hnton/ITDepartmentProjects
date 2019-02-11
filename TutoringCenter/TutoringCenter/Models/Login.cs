@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,6 +16,7 @@ namespace TutoringCenter.Models
             this.SubjectIDs = new List<int>();
         }
         public int ID { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime CheckedIn { get; set; }
         public DateTime? CheckedOut { get; set; }
         public virtual ICollection<Reason> Reasons { get; set; }

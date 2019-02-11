@@ -37,11 +37,10 @@ namespace TutoringCenter.Controllers
         {
             TempData["TempStudentId"] = login.Student.StudentID;
 
-           
 
-            if(db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
+            if(db.Students.Where(u => u.StudentID == login.Student.StudentID).Any() && db.Logins.Where(x => x.CheckedOut == null).Any())
             {
-                var student = db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID && u.CheckedOut == null).Select(u => new { IDnum = u.Student.ID }).Single();
+                var student = db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID).Select(u => new { IDnum = u.Student.ID }).Single();
 
                 var i = student.IDnum;
                 return RedirectToAction("Logout", new { id = i });
@@ -70,6 +69,7 @@ namespace TutoringCenter.Controllers
         // GET: Login/Create
         public ActionResult Create()
         {
+            
             ViewBag.data = TempData["TempStudentId"].ToString();
             ViewBag.Reasons = new MultiSelectList(db.Reasons.ToList(), "R_ID", "Name");
             ViewBag.Subjects = new MultiSelectList(db.Subjects.ToList(), "S_ID", "Name");
@@ -83,7 +83,7 @@ namespace TutoringCenter.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Login login)
         {
-            
+
             if (ModelState.IsValid)
             {
                 
@@ -123,14 +123,16 @@ namespace TutoringCenter.Controllers
             return View(login);
         }
 
-        public ActionResult Logout(int? id)
+        public ActionResult Logout(int? Id)
         {
-
-            if (id == null)
+            
+            if (Id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Login login = db.Logins.Find(id);
+            
+            Login login = db.Logins.Find(Id);
+            
             if (login == null)
             {
                 return HttpNotFound();
@@ -156,13 +158,15 @@ namespace TutoringCenter.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Logout([Bind(Include = "Id,StudentID,VisitReason,Subject,CheckedIn,CheckedOut")] Login login)
+        public ActionResult Logout([Bind(Include = "ID,CheckedIn,CheckedOut")] Login login)
         {
+
+
             if (ModelState.IsValid)
             {
                 db.Entry(login).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("CheckedOut");
+                return RedirectToAction("Index");
             }
             return View(login);
         }

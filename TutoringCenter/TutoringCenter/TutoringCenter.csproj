@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HELPERController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ReasonsController.cs" />
@@ -161,6 +162,10 @@
     <Compile Include="Migrations\201902082014254_3.cs" />
     <Compile Include="Migrations\201902082014254_3.Designer.cs">
       <DependentUpon>201902082014254_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902111524149_DateTimeUpate.cs" />
+    <Compile Include="Migrations\201902111524149_DateTimeUpate.Designer.cs">
+      <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
@@ -264,6 +269,11 @@
     <Content Include="Views\Subjects\Details.cshtml" />
     <Content Include="Views\Subjects\Edit.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\HELPER\Create.cshtml" />
+    <Content Include="Views\HELPER\Delete.cshtml" />
+    <Content Include="Views\HELPER\Details.cshtml" />
+    <Content Include="Views\HELPER\Edit.cshtml" />
+    <Content Include="Views\HELPER\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -300,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902082014254_3.resx">
       <DependentUpon>201902082014254_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902111524149_DateTimeUpate.resx">
+      <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
