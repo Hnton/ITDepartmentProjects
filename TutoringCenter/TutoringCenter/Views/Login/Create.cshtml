@@ -3,9 +3,7 @@
     ViewBag.Title = "Check In";
 }
 
-
 <script>
-
 
     $(document).ready(function () {
 
@@ -16,7 +14,7 @@
 </script>
 
 @*<h2>Create</h2>*@
-<body style="background-image:url(https://rrcsignin.wvup.edu/images/66346.jpg);background-size: cover;">
+<body>
 
     @using (Html.BeginForm())
     {
@@ -52,7 +50,6 @@
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
             <div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;
                 padding-left:20px;padding-right:20px;padding-bottom:20px;padding-top:0;
                 border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
@@ -64,14 +61,11 @@
                                 <span style="font-size:32pt;">Welcome to the </span><br><span style="font-size:18pt;">Riverhawk Resource &amp; Tutoring Center</span>
                             </td>
                             <td width="25%">
-                                <img src="https://rrcsignin.wvup.edu/IMAGES/Rick.JPG" style="width:150px">
+                                <img src="~/Content/Images/Ricky.jpg" style="width:150px">
                             </td>
                         </tr>
                     </tbody>
                 </table>
-
-
-
 
                 <div class="form-group" style="display:none">
 
@@ -108,10 +102,6 @@
                         @Html.ValidationMessageFor(model => model.Subjects, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-
-
-
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
