@@ -367,3 +367,7 @@ C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringC
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.Update2820192.resources
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations._2.resources
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations._3.resources
+C:\Users\bbelcher\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.Update282019.resources
+C:\Users\bbelcher\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.Update2820192.resources
+C:\Users\bbelcher\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations._2.resources
+C:\Users\bbelcher\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations._3.resources
