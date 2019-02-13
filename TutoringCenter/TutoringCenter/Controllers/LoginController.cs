@@ -36,28 +36,50 @@ namespace TutoringCenter.Controllers
         public ActionResult Index(Login login)
         {
             TempData["TempStudentId"] = login.Student.StudentID;
+            int inputSID = login.Student.StudentID;
 
+            int query = (from o in db.Students
+                         where o.StudentID == inputSID
+                         select o).Count();
+
+
+            int check = (from l in db.Logins
+                         join s in db.Students
+                            on l.Student.ID equals s.ID
+                         where s.StudentID == inputSID && l.CheckedOut == null
+                         orderby l.ID descending
+                         select l).Count();
+            
 
             
-            if(db.Students.Where(u => u.StudentID == login.Student.StudentID).Any())
+            
+
+            //STUDENT IS IN THE SYSTEM
+            // 1 = 
+            if (query != 0 )
             {
+                //STUDENT IS LOGGED IN & NEEDS TO BE CHECKED OUT
 
-                if(db.Logins.Where(x => x.Student.ID == login.Student.StudentID && x.CheckedOut == null).Any())
-              
+                if (check != 0)
                 {
-                    var student = db.Logins.Where(u => u.Student.StudentID == login.Student.StudentID).Select(u => new { IDnum = u.ID }).Single();
+                    var student = db.Logins.Where(c => c.Student.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).SingleOrDefault();
 
-                    var i = student.IDnum;
-                    return RedirectToAction("Logout", new { id = i });
+                    return RedirectToAction("Logout", new { id = student.IDNUM });
                 }
+                //STUDENT IS IN SYSTEM AND CHECKED OUT
                 else
                 {
+                    //CREATE NEW LOGIN WITH NEW ID AND NEW CHECKIN BUT SAME STUDENT ID
+
                     return RedirectToAction("Create");
                 }
+
             }
+            //STUDENT IS NOT IN THE SYSTEM
             else
-            { 
+            {
                 return RedirectToAction("Create");
+                
             }
         }
 
