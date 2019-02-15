@@ -18,6 +18,19 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <div style="font-weight:100">
+            Checked = Disabled
+            <br />
+            Unchecked = Enabled
+        </div>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
     </dl>
 </div>
 <p>
