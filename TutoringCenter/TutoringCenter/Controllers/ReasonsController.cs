@@ -47,7 +47,7 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "R_ID,Name")] Reason reason)
+        public ActionResult Create([Bind(Include = "R_ID,Name,Status")] Reason reason)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace TutoringCenter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "R_ID,Name")] Reason reason)
+        public ActionResult Edit([Bind(Include = "R_ID,Name,Status")] Reason reason)
         {
             if (ModelState.IsValid)
             {

@@ -15,22 +15,25 @@ namespace TutoringCenter.Controllers
     {
         private ApplicationContext db = new ApplicationContext();
 
-        // GET: Login
+        // Login Page
         public ActionResult Index()
         {
             return View();
         }
 
+        // CheckedIn Page
         public ActionResult CheckedIn()
         {
             return View();
         }
 
+        // CheckedOut Page
         public ActionResult CheckedOut()
         {
             return View();
         }
 
+        // Login Page Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(Login login)
@@ -42,83 +45,57 @@ namespace TutoringCenter.Controllers
                          where o.StudentID == inputSID
                          select o).Count();
 
-
             int check = (from l in db.Logins
                          join s in db.Students
                             on l.Student.ID equals s.ID
                          where s.StudentID == inputSID && l.CheckedOut == null
                          orderby l.ID descending
                          select l).Count();
-            
 
-            
-            
-
-            //STUDENT IS IN THE SYSTEM
-            // 1 = 
+            //STUDENT IS IN THE SYSTEM 
             if (query != 0 )
             {
                 //STUDENT IS LOGGED IN & NEEDS TO BE CHECKED OUT
-
                 if (check != 0)
                 {
-                    var student = db.Logins.Where(c => c.Student.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).SingleOrDefault();
+                    var student = db.Logins.Where(c => c.Student.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).ToList().LastOrDefault();
 
                     return RedirectToAction("Logout", new { id = student.IDNUM });
                 }
                 //STUDENT IS IN SYSTEM AND CHECKED OUT
                 else
                 {
-                    //CREATE NEW LOGIN WITH NEW ID AND NEW CHECKIN BUT SAME STUDENT ID
-
+                    //CREATE NEW LOGIN WITH NEW ID AND NEW CHECKIN BUT SAME STUDENT ID        
                     return RedirectToAction("Create");
                 }
-
             }
             //STUDENT IS NOT IN THE SYSTEM
             else
             {
-                return RedirectToAction("Create");
-                
+                return RedirectToAction("Create");    
             }
         }
 
-        // GET: Login/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Login login = db.Logins.Find(id);
-            if (login == null)
-            {
-                return HttpNotFound();
-            }
-            return View(login);
-        }
-
-        // GET: Login/Create
+        // Create Page
         public ActionResult Create()
-        {
-            
+        {      
             ViewBag.data = TempData["TempStudentId"].ToString();
-            ViewBag.Reasons = new MultiSelectList(db.Reasons.ToList(), "R_ID", "Name");
-            ViewBag.Subjects = new MultiSelectList(db.Subjects.ToList(), "S_ID", "Name");
+
+            var ReasonList = db.Reasons.Where(c => c.Status == false).ToList();
+            var SubjectList = db.Subjects.Where(c => c.Status == false).ToList();
+
+            ViewBag.Reasons = new MultiSelectList(ReasonList.ToList(), "R_ID", "Name");
+            ViewBag.Subjects = new MultiSelectList(SubjectList.ToList(), "S_ID", "Name");
             return View(new Models.Login());//Brian Added here
         }
 
-        // POST: Login/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Create Page Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Login login)
         {
-
             if (ModelState.IsValid)
-            {
-                
+            {     
                 db.Logins.Add(login);
                 db.SaveChanges();
                 foreach(int ID in login.ReasonIDs)
@@ -136,28 +113,12 @@ namespace TutoringCenter.Controllers
                 db.SaveChanges();
                 return RedirectToAction("CheckedIn");
             }
-
             return View(login);
         }
-
-        // GET: Login/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Login login = db.Logins.Find(id);
-            if (login == null)
-            {
-                return HttpNotFound();
-            }
-            return View(login);
-        }
-
+    
+        // Logout Page
         public ActionResult Logout(int? Id)
-        {
-            
+        {  
             if (Id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -176,29 +137,12 @@ namespace TutoringCenter.Controllers
             }
             return View(login);
         }
-
-        // POST: Login/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,StudentID,VisitReason,Subject,CheckedIn,CheckedOut")] Login login)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(login).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(login);
-        }
-
+    
+        // Logout Page Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Logout([Bind(Include = "ID,CheckedIn,CheckedOut")] Login login)
         {
-
-
             if (ModelState.IsValid)
             {
                 db.Entry(login).State = EntityState.Modified;
@@ -208,35 +152,7 @@ namespace TutoringCenter.Controllers
             return View(login);
         }
 
-
-
-
-        // GET: Login/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Login login = db.Logins.Find(id);
-            if (login == null)
-            {
-                return HttpNotFound();
-            }
-            return View(login);
-        }
-
-        // POST: Login/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Login login = db.Logins.Find(id);
-            db.Logins.Remove(login);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
+        // Dispose
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -244,16 +160,6 @@ namespace TutoringCenter.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        
+        }    
     }
-
-    
-
-
-    
-
-
-
 }

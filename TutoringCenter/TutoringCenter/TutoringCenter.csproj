@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201902111524149_DateTimeUpate.Designer.cs">
       <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902151845200_AddStatus2152019.cs" />
+    <Compile Include="Migrations\201902151845200_AddStatus2152019.Designer.cs">
+      <DependentUpon>201902151845200_AddStatus2152019.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Reason.cs" />
@@ -259,6 +263,11 @@
     <Content Include="Views\Login\Logout.cshtml" />
     <Content Include="Views\Login\CheckedIn.cshtml" />
     <Content Include="Views\Login\CheckedOut.cshtml" />
+    <Content Include="Views\HELPER\Create.cshtml" />
+    <Content Include="Views\HELPER\Delete.cshtml" />
+    <Content Include="Views\HELPER\Details.cshtml" />
+    <Content Include="Views\HELPER\Edit.cshtml" />
+    <Content Include="Views\HELPER\Index.cshtml" />
     <Content Include="Views\Reasons\Create.cshtml" />
     <Content Include="Views\Reasons\Delete.cshtml" />
     <Content Include="Views\Reasons\Details.cshtml" />
@@ -269,11 +278,6 @@
     <Content Include="Views\Subjects\Details.cshtml" />
     <Content Include="Views\Subjects\Edit.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
-    <Content Include="Views\HELPER\Create.cshtml" />
-    <Content Include="Views\HELPER\Delete.cshtml" />
-    <Content Include="Views\HELPER\Details.cshtml" />
-    <Content Include="Views\HELPER\Edit.cshtml" />
-    <Content Include="Views\HELPER\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902111524149_DateTimeUpate.resx">
       <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902151845200_AddStatus2152019.resx">
+      <DependentUpon>201902151845200_AddStatus2152019.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
