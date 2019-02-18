@@ -61,7 +61,7 @@ namespace TutoringCenter.Controllers
                 //STUDENT IS LOGGED IN & NEEDS TO BE CHECKED OUT
                 if (check == 1)
                 {
-                    var student = db.Logins.Where(c => c.Student.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).ToList().LastOrDefault();
+                    var student = db.Logins.Where(c => c.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).ToList().LastOrDefault();
 
                     return RedirectToAction("Logout", new { id = student.IDNUM });
                 }
@@ -102,7 +102,7 @@ namespace TutoringCenter.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(login.Student).State = EntityState.Detached;
+                //db.Entry(login.Student).State = EntityState.Detached;
 
                 db.Logins.Add(login);
                 db.SaveChanges();
@@ -120,9 +120,9 @@ namespace TutoringCenter.Controllers
                 db.Entry(login).State = EntityState.Modified;
 
                 db.SaveChanges();
-                return RedirectToAction("CheckedIn");
+                //return RedirectToAction("CheckedIn");
             }
-            return View(login);
+            return Content("edoweo");
         }
     
         // Logout Page
