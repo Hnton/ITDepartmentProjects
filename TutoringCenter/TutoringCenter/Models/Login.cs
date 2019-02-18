@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,7 +22,9 @@ namespace TutoringCenter.Models
         public DateTime? CheckedOut { get; set; }
         public virtual ICollection<Reason> Reasons { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
-        public Student Student { get; set; }
+        public int? StudentID { get; set; }
+        [ForeignKey ("StudentID")] 
+        public virtual Student Student { get; set; }
         
         public List<int> ReasonIDs { get; set; }
         public List<int> SubjectIDs { get; set; }

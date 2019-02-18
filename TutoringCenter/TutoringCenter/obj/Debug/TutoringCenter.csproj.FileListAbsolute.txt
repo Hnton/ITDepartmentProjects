@@ -96,3 +96,5 @@ C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringC
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.csproj.CopyComplete
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.dll
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.pdb
+C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations._112019.resources
+C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.another.resources
