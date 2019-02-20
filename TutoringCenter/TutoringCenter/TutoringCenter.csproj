@@ -158,10 +158,6 @@
     <Compile Include="Migrations\201902082009559_2.Designer.cs">
       <DependentUpon>201902082009559_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902082014254_3.cs" />
-    <Compile Include="Migrations\201902082014254_3.Designer.cs">
-      <DependentUpon>201902082014254_3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201902111524149_DateTimeUpate.cs" />
     <Compile Include="Migrations\201902111524149_DateTimeUpate.Designer.cs">
       <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
@@ -177,6 +173,22 @@
     <Compile Include="Migrations\201902182005290_another.cs" />
     <Compile Include="Migrations\201902182005290_another.Designer.cs">
       <DependentUpon>201902182005290_another.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902201627002_update2202019.cs" />
+    <Compile Include="Migrations\201902201627002_update2202019.Designer.cs">
+      <DependentUpon>201902201627002_update2202019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902201635589_no.cs" />
+    <Compile Include="Migrations\201902201635589_no.Designer.cs">
+      <DependentUpon>201902201635589_no.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902201639171_HELPPP.cs" />
+    <Compile Include="Migrations\201902201639171_HELPPP.Designer.cs">
+      <DependentUpon>201902201639171_HELPPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902201722418_yolo.cs" />
+    <Compile Include="Migrations\201902201722418_yolo.Designer.cs">
+      <DependentUpon>201902201722418_yolo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
@@ -317,9 +329,6 @@
     <EmbeddedResource Include="Migrations\201902082009559_2.resx">
       <DependentUpon>201902082009559_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902082014254_3.resx">
-      <DependentUpon>201902082014254_3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902111524149_DateTimeUpate.resx">
       <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +340,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902182005290_another.resx">
       <DependentUpon>201902182005290_another.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902201627002_update2202019.resx">
+      <DependentUpon>201902201627002_update2202019.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902201635589_no.resx">
+      <DependentUpon>201902201635589_no.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902201639171_HELPPP.resx">
+      <DependentUpon>201902201639171_HELPPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902201722418_yolo.resx">
+      <DependentUpon>201902201722418_yolo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

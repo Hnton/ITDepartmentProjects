@@ -38,40 +38,23 @@ namespace TutoringCenter.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Login login)
         {
-            TempData["TempStudentId"] = login.Student.StudentID;
-            int inputSID = login.Student.StudentID;
+            TempData["TempStudentId"] = login.RealStudentID;
+            int inputSID = (int)login.RealStudentID;
 
-            int query = (from o in db.Students
-                         where o.StudentID == inputSID
-                         select o).Count();
-
-            
             int check = (from l in db.Logins
                          join s in db.Students
                             on l.Student.ID equals s.ID
                          where s.StudentID == inputSID && l.CheckedOut == null
                          select l).Count();
 
-            TempData["queryTemp"] = query;
-            TempData["checkTemp"] = check;
+            Student student = db.Students.Where(x => x.StudentID == inputSID).FirstOrDefault();
 
             //STUDENT IS IN THE SYSTEM 
-            if (query == 1)
-            {
-                //STUDENT IS LOGGED IN & NEEDS TO BE CHECKED OUT
-                if (check == 1)
-                {
-                    var student = db.Logins.Where(c => c.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).ToList().LastOrDefault();
+            if (student != null && check == 1)
+            {  
+                var students = db.Logins.Where(c => c.Student.StudentID == inputSID).Select(c => new { IDNUM = c.ID }).ToList().LastOrDefault();
 
-                    return RedirectToAction("Logout", new { id = student.IDNUM });
-                }
-                //STUDENT IS IN SYSTEM AND CHECKED OUT
-                else
-                {
-                    //CREATE NEW LOGIN WITH NEW ID AND NEW CHECKIN BUT SAME STUDENT ID 
-                   
-                    return RedirectToAction("Create");
-                }
+                return RedirectToAction("Logout", new { id = students.IDNUM });              
             }
             //STUDENT IS NOT IN THE SYSTEM
             else
@@ -84,8 +67,7 @@ namespace TutoringCenter.Controllers
         public ActionResult Create()
         {      
             ViewBag.data = TempData["TempStudentId"].ToString();
-            ViewBag.check = TempData["checkTemp"].ToString();
-            ViewBag.query = TempData["queryTemp"].ToString();
+           
 
             var ReasonList = db.Reasons.Where(c => c.Status == false).ToList();
             var SubjectList = db.Subjects.Where(c => c.Status == false).ToList();
@@ -102,7 +84,23 @@ namespace TutoringCenter.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(login.Student).State = EntityState.Detached;
+                Student student = db.Students.Where(x => x.StudentID == login.RealStudentID).FirstOrDefault();
+
+                if(student != null)
+                {
+                    login.Student = student;
+                    login.RealStudentID = student.ID;
+                }
+                else
+                {
+                    
+                    student = new Student
+                    {
+                        StudentID = (int)login.RealStudentID
+                    };
+                    db.Students.Add(student);
+                    login.RealStudentID = student.ID;
+                }
 
                 db.Logins.Add(login);
                 db.SaveChanges();
@@ -120,16 +118,15 @@ namespace TutoringCenter.Controllers
                 db.Entry(login).State = EntityState.Modified;
 
                 db.SaveChanges();
-                //return RedirectToAction("CheckedIn");
+                return RedirectToAction("CheckedIn");
             }
-            return Content("edoweo");
+            return RedirectToAction("CheckedIn");
         }
     
         // Logout Page
         public ActionResult Logout(int? Id)
         {
-            ViewBag.query = TempData["queryTemp"].ToString();
-            ViewBag.check = TempData["checkTemp"].ToString();
+          
             if (Id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -138,7 +135,7 @@ namespace TutoringCenter.Controllers
             Login login = db.Logins.Find(Id);
             
             db.Logins
-                .Where(y => y.Student.ID == login.ID)
+                .Where(y => y.Student.ID == login.RealStudentID)
                 .ToList()
                 .ForEach(a => a.CheckedOut = DateTime.Now);
             db.SaveChanges();
@@ -158,9 +155,7 @@ namespace TutoringCenter.Controllers
             {
                 db.Entry(login).State = EntityState.Modified;
 
-                login.CheckedOut = DateTime.Now;
-
-                db.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
             return View(login);

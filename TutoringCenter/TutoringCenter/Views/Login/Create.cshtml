@@ -61,18 +61,15 @@
                     </tbody>
                 </table>
 
-                <script>
-                    alert('Query = @ViewBag.query');
-                    alert('Check = @ViewBag.check');
-                </script>
+               
 
 
                 <div class="form-group" style="display:none">
 
-                    @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.RealStudentID, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-12">
-                        @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
-                        @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.RealStudentID, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
+                        @Html.ValidationMessageFor(model => model.RealStudentID, "", new { @class = "text-danger" })
                     </div>
                 </div>
 

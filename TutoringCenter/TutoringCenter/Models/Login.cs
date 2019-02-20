@@ -22,8 +22,8 @@ namespace TutoringCenter.Models
         public DateTime? CheckedOut { get; set; }
         public virtual ICollection<Reason> Reasons { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
-        public int? StudentID { get; set; }
-        [ForeignKey ("StudentID")] 
+        public int RealStudentID { get; set; }
+        [ForeignKey ("RealStudentID")] 
         public virtual Student Student { get; set; }
         
         public List<int> ReasonIDs { get; set; }
