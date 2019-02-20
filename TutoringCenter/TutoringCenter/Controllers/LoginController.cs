@@ -21,6 +21,12 @@ namespace TutoringCenter.Controllers
             return View();
         }
 
+        // Admin Page
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
         // CheckedIn Page
         public ActionResult CheckedIn()
         {
@@ -40,6 +46,13 @@ namespace TutoringCenter.Controllers
         {
             TempData["TempStudentId"] = login.RealStudentID;
             int inputSID = (int)login.RealStudentID;
+
+            // Admin use
+            if(inputSID == 123456789)
+            {
+                return RedirectToAction("Admin");
+            }
+
 
             int check = (from l in db.Logins
                          join s in db.Students
