@@ -133,61 +133,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201901141931192_InitialCreate.cs" />
-    <Compile Include="Migrations\201901141931192_InitialCreate.Designer.cs">
-      <DependentUpon>201901141931192_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901141938590_tbupdate.cs" />
-    <Compile Include="Migrations\201901141938590_tbupdate.Designer.cs">
-      <DependentUpon>201901141938590_tbupdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901141939493_tbupdate1.cs" />
-    <Compile Include="Migrations\201901141939493_tbupdate1.Designer.cs">
-      <DependentUpon>201901141939493_tbupdate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902081833360_Update282019.cs" />
-    <Compile Include="Migrations\201902081833360_Update282019.Designer.cs">
-      <DependentUpon>201902081833360_Update282019.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902081956594_Update2820192.cs" />
-    <Compile Include="Migrations\201902081956594_Update2820192.Designer.cs">
-      <DependentUpon>201902081956594_Update2820192.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902082009559_2.cs" />
-    <Compile Include="Migrations\201902082009559_2.Designer.cs">
-      <DependentUpon>201902082009559_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902111524149_DateTimeUpate.cs" />
-    <Compile Include="Migrations\201902111524149_DateTimeUpate.Designer.cs">
-      <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902151845200_AddStatus2152019.cs" />
-    <Compile Include="Migrations\201902151845200_AddStatus2152019.Designer.cs">
-      <DependentUpon>201902151845200_AddStatus2152019.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902181952223_112019.cs" />
-    <Compile Include="Migrations\201902181952223_112019.Designer.cs">
-      <DependentUpon>201902181952223_112019.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902182005290_another.cs" />
-    <Compile Include="Migrations\201902182005290_another.Designer.cs">
-      <DependentUpon>201902182005290_another.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902201627002_update2202019.cs" />
-    <Compile Include="Migrations\201902201627002_update2202019.Designer.cs">
-      <DependentUpon>201902201627002_update2202019.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902201635589_no.cs" />
-    <Compile Include="Migrations\201902201635589_no.Designer.cs">
-      <DependentUpon>201902201635589_no.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902201639171_HELPPP.cs" />
-    <Compile Include="Migrations\201902201639171_HELPPP.Designer.cs">
-      <DependentUpon>201902201639171_HELPPP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902201722418_yolo.cs" />
-    <Compile Include="Migrations\201902201722418_yolo.Designer.cs">
-      <DependentUpon>201902201722418_yolo.cs</DependentUpon>
+    <Compile Include="Migrations\201902211827489_Initial.cs" />
+    <Compile Include="Migrations\201902211827489_Initial.Designer.cs">
+      <DependentUpon>201902211827489_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
@@ -303,47 +251,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901141931192_InitialCreate.resx">
-      <DependentUpon>201901141931192_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901141938590_tbupdate.resx">
-      <DependentUpon>201901141938590_tbupdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901141939493_tbupdate1.resx">
-      <DependentUpon>201901141939493_tbupdate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902081833360_Update282019.resx">
-      <DependentUpon>201902081833360_Update282019.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902081956594_Update2820192.resx">
-      <DependentUpon>201902081956594_Update2820192.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902082009559_2.resx">
-      <DependentUpon>201902082009559_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902111524149_DateTimeUpate.resx">
-      <DependentUpon>201902111524149_DateTimeUpate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902151845200_AddStatus2152019.resx">
-      <DependentUpon>201902151845200_AddStatus2152019.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902181952223_112019.resx">
-      <DependentUpon>201902181952223_112019.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902182005290_another.resx">
-      <DependentUpon>201902182005290_another.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902201627002_update2202019.resx">
-      <DependentUpon>201902201627002_update2202019.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902201635589_no.resx">
-      <DependentUpon>201902201635589_no.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902201639171_HELPPP.resx">
-      <DependentUpon>201902201639171_HELPPP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902201722418_yolo.resx">
-      <DependentUpon>201902201722418_yolo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902211827489_Initial.resx">
+      <DependentUpon>201902211827489_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
