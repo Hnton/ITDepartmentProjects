@@ -31,7 +31,7 @@
 <div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;padding:20px;border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
 
 
-    <h2>Index</h2>
+    <h2>Subjects</h2>
 
     <p>
         @Html.ActionLink("Create New", "Create")
@@ -43,11 +43,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
-                <div style="font-weight:100">
-                    Checked = Disabled
-                    <br />
-                    Unchecked = Enabled
-                </div>
+
             </th>
 
             <th></th>
@@ -61,7 +57,14 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Status)
+                    @if (item.Status == true)
+                    {
+                        @:Disabled
+                    }
+                    else
+                    {
+                        @:Enabled
+                    }
                 </td>
 
                 <td>
@@ -73,5 +76,9 @@
         }
 
     </table>
+
+    <p>
+        @Html.ActionLink("Back to Admin page", "Admin", "Login")
+    </p>
 </div>
 <br />

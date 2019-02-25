@@ -49,16 +49,14 @@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div style="font-weight:100">
-                    Checked = Disabled
-                    <br />
-                    Unchecked = Enabled
-                </div>
+               
                 <div class="col-md-10">
                     <div class="checkbox">
-                        @Html.EditorFor(model => model.Status)
-                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Status,
+                        new { htmlAttributes =
+                        new { data_toggle = "toggle", data_on = "Disabled", data_off = "Enabled", data_onstyle = "danger", data_offstyle = "info", type = "checkbox" } })
                     </div>
+
                 </div>
             </div>
 

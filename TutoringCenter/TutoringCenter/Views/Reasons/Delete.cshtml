@@ -50,7 +50,14 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Status)
+                @if (Model.Status == true)
+                {
+                    @:Disabled
+                }
+                else
+                {
+                    @:Enabled
+                }
             </dd>
 
         </dl>

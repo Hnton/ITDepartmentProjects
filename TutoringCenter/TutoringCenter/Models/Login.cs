@@ -19,7 +19,7 @@ namespace TutoringCenter.Models
         public int ID { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime CheckedIn { get; set; }
-        public DateTime? CheckedOut { get; set; }
+        public DateTime? CheckedOut { get; set; }          
         public virtual ICollection<Reason> Reasons { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
         public int RealStudentID { get; set; }
