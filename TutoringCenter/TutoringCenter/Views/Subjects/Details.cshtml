@@ -4,36 +4,64 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    .Submit_Button {
+        background: rgb(28, 184, 65);
+        color: white;
+        border-radius: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 14pt;
+    }
 
-<div>
-    <h4>Subject</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        .Submit_Button:hover {
+            background-color: #808080;
+            color: white;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <div style="font-weight:100">
-            Checked = Disabled
-            <br />
-            Unchecked = Enabled
-        </div>
+<div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;padding:20px;border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+    <h2>Details</h2>
 
-    </dl>
+    <div>
+        <h4>Subject</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <div style="font-weight:100">
+                Checked = Disabled
+                <br />
+                Unchecked = Enabled
+            </div>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.S_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.S_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />

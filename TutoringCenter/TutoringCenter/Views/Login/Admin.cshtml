@@ -2,10 +2,31 @@
     ViewBag.Title = "Admin";
 }
 
-<h3>Add/Update/Delete Reasons</h3>
 
-@Html.ActionLink("Reasons", "Index", "Reasons");
 
-<h3>Add/Update/Delete Subjects</h3>
+<body>
 
-@Html.ActionLink("Subjects", "Index", "Subjects");
+    <div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;
+               padding-left:20px;padding-right:20px;padding-bottom:20px;padding-top:0;
+               border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
+
+        <br />
+        <center>
+            <h3>Add/Update/Delete Reasons</h3>
+            @Html.ActionLink("Click here to modify the Reasons", "Index", "Reasons")
+
+            <br />
+            <br />
+            <h3>Add/Update/Delete Subjects</h3>
+            @Html.ActionLink("Click here to modify the Subjects", "Index", "Subjects")
+
+            <br />
+            <br />
+            <h3>Back to Home</h3>
+            @Html.ActionLink("Click here to go back to the home page", "Index")
+
+        </center>
+
+    </div>
+</body>
+<br />

@@ -4,44 +4,74 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    .Submit_Button {
+        background: rgb(28, 184, 65);
+        color: white;
+        border-radius: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 14pt;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-            <div style="font-weight:100">
-                Checked = Disabled
-                <br />
-                Unchecked = Enabled
-            </div>
-        </th>
-        
-        <th></th>
-    </tr>
+        .Submit_Button:hover {
+            background-color: #808080;
+            color: white;
+        }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+<div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;padding:20px;border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
 
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.S_ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.S_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.S_ID })
-        </td>
-    </tr>
-}
+    <h2>Index</h2>
 
-</table>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+                <div style="font-weight:100">
+                    Checked = Disabled
+                    <br />
+                    Unchecked = Enabled
+                </div>
+            </th>
+
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.S_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.S_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.S_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<br />

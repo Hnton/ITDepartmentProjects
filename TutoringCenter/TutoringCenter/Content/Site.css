@@ -22,3 +22,26 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.Submit_Button {
+    background: rgb(28, 184, 65);
+    color: white;
+    border-radius: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 14pt;
+}
+
+    .Submit_Button:hover {
+        background-color: #808080;
+        color: white;
+    }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -4,36 +4,42 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Reason</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+<div style="margin-left:auto;margin-right:auto;border-radius:20px;max-width:650px;border-color:white;background-color:white;padding:20px;border:solid;border-width:2px;border-color:lightgray;box-shadow: 8px 8px 6px #888888 ;">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <div style="font-weight:100">
-            Checked = Disabled
-            <br />
-            Unchecked = Enabled
-        </div>
-        <dd>
+    <h2>Details</h2>
 
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+    <div>
+        <h4>Reason</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <div style="font-weight:100">
+                Checked = Disabled
+                <br />
+                Unchecked = Enabled
+            </div>
+            <dd>
+
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.R_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.R_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
