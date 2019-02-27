@@ -252,6 +252,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
+    <Folder Include="SQLCommands\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
