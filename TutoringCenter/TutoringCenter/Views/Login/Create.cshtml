@@ -40,6 +40,8 @@
                     -webkit-appearance: none;
                     margin: 0;
                 }
+
+              
             </style>
             
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -69,7 +71,7 @@
                     @Html.LabelFor(model => model.RealStudentID, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.RealStudentID, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
-                        @Html.ValidationMessageFor(model => model.RealStudentID, "", new { @class = "text-danger" })
+                       
                     </div>
                 </div>
 
@@ -78,7 +80,7 @@
                     @Html.LabelFor(model => model.CheckedIn, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.CheckedIn, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now } })
-                        @Html.ValidationMessageFor(model => model.CheckedIn, "", new { @class = "text-danger" })
+                       
                     </div>
                 </div>
                 <center>
@@ -88,7 +90,7 @@
 
                     <div class="col-md-12" >
                         @Html.ListBoxFor(model => model.ReasonIDs, ViewBag.Reasons as MultiSelectList, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
-                        @Html.ValidationMessageFor(model => model.Reasons, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.ReasonIDs, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <center>
@@ -97,7 +99,7 @@
                 <div class="form-group" style="padding-left:17%">
                     <div class="col-md-12">
                         @Html.ListBoxFor(model => model.SubjectIDs, ViewBag.Subjects as MultiSelectList, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.data } })
-                        @Html.ValidationMessageFor(model => model.Subjects, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.SubjectIDs, "", new { @class = "text-danger" })
                     </div>
                 </div>
 

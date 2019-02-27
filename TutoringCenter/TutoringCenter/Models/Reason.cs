@@ -10,6 +10,7 @@ namespace TutoringCenter.Models
     {
         [Key]
         public int R_ID { get; set; }
+        [Required(ErrorMessage ="Required")]
         public string Name { get; set; }
         public bool Status { get; set; }
         public virtual ICollection<Login> Logins { get; set; }
