@@ -48,7 +48,7 @@ namespace TutoringCenter.Controllers
             int inputSID = (int)login.RealStudentID;
 
             // Admin use
-            if(inputSID == 123456789)
+            if(inputSID == 0)
             {
                 return RedirectToAction("Admin");
             }
@@ -169,7 +169,7 @@ namespace TutoringCenter.Controllers
                 db.Entry(login).State = EntityState.Modified;
 
                 
-                return RedirectToAction("Index");
+                return RedirectToAction("CheckedOut");
             }
             return View(login);
         }
