@@ -269,3 +269,4 @@ C:\Users\bbelcher\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringC
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.initial.resources
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.csproj.GenerateResource.cache
 C:\Users\mhinton4\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.hello.resources
+C:\Users\bbelcher\Documents\GitHub\ITDepartmentProjects\TutoringCenter\TutoringCenter\obj\Debug\TutoringCenter.Migrations.hello.resources
