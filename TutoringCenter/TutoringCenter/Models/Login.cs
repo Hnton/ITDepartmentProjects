@@ -22,12 +22,17 @@ namespace TutoringCenter.Models
         public DateTime? CheckedOut { get; set; }          
         public virtual ICollection<Reason> Reasons { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
+
+        [Display(Name = "StudentID")]
         [Required(ErrorMessage ="Required")]
         public int RealStudentID { get; set; }
+
         [ForeignKey ("RealStudentID")] 
         public virtual Student Student { get; set; }
+
         [Required(ErrorMessage ="Required")]
         public List<int> ReasonIDs { get; set; }
+
         [Required(ErrorMessage ="Required")]
         public List<int> SubjectIDs { get; set; }
 
