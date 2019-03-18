@@ -3,7 +3,7 @@ namespace TutoringCenter.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -25,7 +25,7 @@ namespace TutoringCenter.Migrations
                 c => new
                     {
                         R_ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.R_ID);
@@ -46,7 +46,7 @@ namespace TutoringCenter.Migrations
                 c => new
                     {
                         S_ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.S_ID);

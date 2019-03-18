@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿// Application Context that connects the Database to the Application
+// (LocalDb)\MsSQLLocalDb which is in Web.config
+
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using TutoringCenter.Models;
 
 namespace TutoringCenter.DAL
@@ -12,9 +10,10 @@ namespace TutoringCenter.DAL
     {
         public ApplicationContext() : base("ApplicationContext")
         {
-
+            //NULL
         }
 
+        // Where each database table is created
         public DbSet<Login> Logins { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Reason> Reasons { get; set; }
@@ -23,10 +22,7 @@ namespace TutoringCenter.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-               
+            base.OnModelCreating(modelBuilder);     
         }
-
-      
     }
 }

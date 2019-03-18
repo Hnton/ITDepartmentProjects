@@ -10,7 +10,6 @@ namespace TutoringCenter.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TutoringCenter.DAL.ApplicationContext";
         }
 
         protected override void Seed(TutoringCenter.DAL.ApplicationContext context)
